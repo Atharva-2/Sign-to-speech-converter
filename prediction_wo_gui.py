@@ -2,7 +2,7 @@ import math
 import cv2
 from cvzone.HandTrackingModule import HandDetector
 import numpy as np
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 import traceback
 
 model = load_model('/cnn8grps_rad1_model.h5')

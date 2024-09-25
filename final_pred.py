@@ -5,7 +5,7 @@ import cv2
 import os, sys
 import traceback
 import pyttsx3
-from keras.models import load_model
+from tensorflow.keras.models import load_model # type: ignore
 from cvzone.HandTrackingModule import HandDetector
 from string import ascii_uppercase
 import enchant
@@ -18,6 +18,8 @@ from PIL import Image, ImageTk
 offset=29
 
 os.environ["THEANO_FLAGS"] = "device=cuda, assert_no_cpu_op=True"
+# # import os
+# print(os.getcwd())
 
 
 # Application :
@@ -27,7 +29,7 @@ class Application:
     def __init__(self):
         self.vs = cv2.VideoCapture(0)
         self.current_image = None
-        self.model = load_model('/cnn8grps_rad1_model.h5')
+        self.model = load_model("E:\College\BE Cyberseccurity\SEM 5\PBL\project\Sign-Language-To-Text-and-Speech-Conversion\datasets\cnn8grps_rad1_model.h5")
         self.speak_engine=pyttsx3.init()
         self.speak_engine.setProperty("rate",100)
         voices=self.speak_engine.getProperty("voices")
